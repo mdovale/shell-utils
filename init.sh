@@ -45,7 +45,7 @@ _shell_utils_load() {
         shopt -u expand_aliases
     fi
 
-    for name in count_lines docku extract gitsize mkcd mkvenv path_prepend play; do
+    for name in count_lines docku extract gitsize gpumem mkcd mkvenv path_prepend play; do
         unalias "$name" 2>/dev/null || :
     done
 

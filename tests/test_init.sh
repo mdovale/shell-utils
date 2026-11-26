@@ -2,7 +2,7 @@
 # shellcheck disable=SC1091
 . "$SHELL_UTILS_ROOT/init.sh"
 
-for name in mkvenv play docku count_lines mkcd extract path_prepend gitsize; do
+for name in mkvenv play docku count_lines mkcd extract path_prepend gitsize gpumem; do
     is_function "$name"
 done
 

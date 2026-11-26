@@ -116,6 +116,25 @@ gitsize
 gitsize ~/src/project
 ```
 
+### gpumem
+
+Show or change the macOS GPU wired-memory limit (`iogpu.wired_limit_mb`).
+Apple Silicon and macOS 14 or later. The value is a ceiling, not an
+allocation, and it does not survive a reboot. Setting it runs `sysctl`
+through `sudo`. Reading does not.
+
+`max` leaves `GPUMEM_RESERVE_GB` GiB for macOS (default 10). An explicit
+size that would leave less than that is refused. `reset` restores the
+macOS default, about 75% of RAM.
+
+```sh
+gpumem
+gpumem 86
+gpumem max
+GPUMEM_RESERVE_GB=12 gpumem max
+gpumem reset
+```
+
 ## Tests
 
 ```sh
